@@ -43,17 +43,19 @@ button::-moz-focus-inner{border:0;padding:0}
 
 /* Content */
 .content{display:flex;justify-content:center;align-items:center;min-height:100vh}
-.content--reveal{position:absolute;z-index:1001;top:0;left:5vw;width:90vw;min-height:100vh;padding:50px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+.content--reveal{position:absolute;z-index:1001;top:0;left:5vw;width:90vw;min-height:100vh;padding:50px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:justify;pointer-events:none}
 .content__inner{position:absolute;opacity:0;visibility:hidden;transition:opacity .3s}
 .content__inner.content__inner--show{position:static;opacity:1;visibility:visible}
+.content__center{text-align:center}
 .content__title{font-size:8vw;font-weight:500;margin:0;color:#fff;text-transform:lowercase;letter-spacing:-.05em;text-indent:-.05em}
 .content__subtitle {font-size:20px;font-weight:400;margin:5px auto 30px;color:#ededed;max-width:800px}
 .content__subtitle a{transition:color .3s,opacity .3s}
-.content__subtitle .underline{text-decoration:underline}
 .content__subtitle a:hover{opacity:.8}
+.content__underline{text-decoration:underline}
 .content__list{margin:10px 0 0}
 .content__list.no__style{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
-.content__item{text-align:left;margin:10px 0;padding:0 16px}
+.content__item{margin:10px 0;padding-left:16px}
+.no__style .content__item{padding-right:16px}
 .content__list:not(.no__style) .content__item:before{content:"\26AC";margin-left:-16px;width:16px;display:inline-block}
 .content__link{display:block;border-radius:50%}
 .content__link svg{fill:currentColor;width:60px;height:60px}
@@ -62,10 +64,13 @@ button::-moz-focus-inner{border:0;padding:0}
 .content__close:hover{background:#000;border-color:#000}
 .content__close svg{display:block;margin:0 auto;fill:currentColor}
 
-
 @media screen and (max-width:991px) {
 	.menu{font-size:44px;margin:0 auto;align-items:center}
 	.content{min-height:0;padding-bottom:50px}
 	.content__subtitle{font-size:16px;margin-bottom:15px}
 	.content__close{width:60px;height:60px}
+}
+
+@media screen and (max-width:480px) {
+	.content__link svg{width:50px;height:50px}
 }

@@ -84,7 +84,7 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
                     duration: 1000,
                     delay: (t,i) => i*50 + 200,
                     easing: [0.8,0,0.1,0],
-                    d: t => t.getAttribute('pathdata:id'),
+                    d: t => t.getAttribute('data-pathid'),
                     update: function(anim) {
                         if (anim.progress > 75 && !halfway) {
                             halfway = true;
