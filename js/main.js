@@ -52,6 +52,7 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
         }
         init() {
             this.rect = this.DOM.el.getBoundingClientRect();
+            setTimeout(() => document.body.classList.add('render'), 60);
             this.descriptions = [];
             this.layers = Array.from(this.DOM.el.querySelectorAll('path'), t => {
                 t.style.transformOrigin = `${this.rect.left + this.rect.width/2}px ${this.rect.top + this.rect.height/2}px`;

@@ -10,6 +10,10 @@ svg:not(:root){overflow:hidden}
 button{font-family:inherit;font-size:100%;margin:0;line-height:normal;text-transform:none;-webkit-appearance:button;cursor:pointer}
 button::-moz-focus-inner{border:0;padding:0}
 
+/* Fade effect */
+.js body{opacity:0;transition:opacity .3s}
+.js body.render{opacity:1}
+
 /* Menu */
 .menu{position:relative;z-index:1000;display:flex;flex-direction:column;margin:0 0 0 25vw;font-size:4vw;align-items:flex-start}
 .menu__item{color:#fff;line-height:1.25;text-transform:lowercase;letter-spacing:-.055em;text-indent:-.025em;font-weight:500;position:relative;pointer-events:none}
