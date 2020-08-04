@@ -1,0 +1,71 @@
+*,*::after,*::before{box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;min-height:100vh;color:#ededed;color:#ededed;background-color:#000;background-color:#000;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin:0;-webkit-text-size-adjust:100%;word-break:break-word}
+body::-webkit-scrollbar{width:0;height:0}
+main,nav{display:block}
+a{text-decoration:none;color:#fff;outline:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+a:focus,a:hover{color:#fff;outline:none}
+svg:not(:root){overflow:hidden}
+button{font-family:inherit;font-size:100%;margin:0;line-height:normal;text-transform:none;-webkit-appearance:button;cursor:pointer}
+button::-moz-focus-inner{border:0;padding:0}
+
+/* Menu */
+.menu{position:relative;z-index:1000;display:flex;flex-direction:column;margin:0 0 0 25vw;font-size:4vw;align-items:flex-start}
+.menu__item{color:#fff;line-height:1.25;text-transform:lowercase;letter-spacing:-.055em;text-indent:-.025em;font-weight:500;position:relative;pointer-events:none}
+.menu__item:hover,
+.menu__item:focus{color:#fff}
+.menu__item::before{content:'';width:60%;height:25px;background:linear-gradient(45deg,#f19872,#e86c9a);position:absolute;left:0;bottom:0;transform-origin:0 0;transform:scale3d(0,1,1)}
+.menu__item:nth-child(2)::before{background:linear-gradient(45deg,#0947db,#07d89d)}
+.menu__item:nth-child(3)::before{background:linear-gradient(45deg,#ee2d29,#f8ae2c)}
+.menu__item:nth-child(4)::before{background:linear-gradient(45deg,#3a3d98,#6f22b9)}
+.menu__item:nth-child(5)::before{background:linear-gradient(45deg,#9d316e,#de2d3e)}
+.menu__item:nth-child(6)::before{background:linear-gradient(45deg,#00ac53,#23c3e0)}
+.menu__item--showDeco{pointer-events:auto}
+.menu__item--showDeco::before{transition:transform .8s cubic-bezier(.2,1,.3,1);transform:scale3d(1,1,1)}
+.menu__item--showDeco:hover::before{transition:transform .8s cubic-bezier(.2,1,.3,1);transform:scale3d(1.2,1,1)}
+.menu__item span{position:relative}
+
+/* Scene */
+.scene{position:fixed;top:0;left:0;width:100%;height:100vh;pointer-events:none;z-index:1}
+.scene .blob-1 path{fill:url(#gradient-1)}
+.scene .blob-2 path{fill:url(#gradient-2)}
+.scene .blob-3 path{fill:url(#gradient-3)}
+.scene .blob-4 path{fill:url(#gradient-4)}
+.scene .blob-5 path{fill:url(#gradient-5)}
+.scene .blob-6 path{fill:url(#gradient-6)}
+.scene path:first-of-type{fill-opacity:.1}
+.scene path:nth-of-type(2){fill-opacity:.2}
+.scene path:nth-of-type(3){fill-opacity:.3}
+.scene path:nth-of-type(4){fill-opacity:.4}
+.scene path:nth-of-type(5){fill-opacity:.5}
+.scene path:nth-of-type(6){fill-opacity:.6}
+
+/* Content */
+.content{display:flex;justify-content:center;align-items:center;min-height:100vh}
+.content--reveal{position:absolute;z-index:1001;top:0;left:5vw;width:90vw;min-height:100vh;padding:50px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+.content__inner{position:absolute;opacity:0;visibility:hidden;transition:opacity .3s}
+.content__inner.content__inner--show{position:static;opacity:1;visibility:visible}
+.content__title{font-size:8vw;font-weight:500;margin:0;color:#fff;text-transform:lowercase;letter-spacing:-.05em;text-indent:-.05em}
+.content__subtitle {font-size:20px;font-weight:400;margin:5px auto 30px;color:#ededed;max-width:800px}
+.content__subtitle a{transition:color .3s,opacity .3s}
+.content__subtitle .underline{text-decoration:underline}
+.content__subtitle a:hover{opacity:.8}
+.content__list{margin:10px 0 0}
+.content__list.no__style{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
+.content__item{text-align:left;margin:10px 0;padding:0 16px}
+.content__list:not(.no__style) .content__item:before{content:"\26AC";margin-left:-16px;width:16px;display:inline-block}
+.content__link{display:block;border-radius:50%}
+.content__link svg{fill:currentColor;width:60px;height:60px}
+.content__close{position:relative;background:none;color:#fff;border:1px solid;padding:0;display:block;width:80px;height:80px;border-radius:50%;opacity:0;transition:opacity .3s,background .3s,border-color .3s}
+.content__close:focus{outline:none}
+.content__close:hover{background:#000;border-color:#000}
+.content__close svg{display:block;margin:0 auto;fill:currentColor}
+
+
+@media screen and (max-width:991px) {
+	.menu{font-size:44px;margin:0 auto;align-items:center}
+	.content{min-height:0;padding-bottom:50px}
+	.content__subtitle{font-size:16px;margin-bottom:15px}
+	.content__close{width:60px;height:60px}
+}
