@@ -196,7 +196,7 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
             const contentInner = DOM.contentInner[pos];
             contentInner.classList.add('content__inner--show');
             anime({
-                targets: [contentInner.querySelectorAll('.content__title > span'), contentInner.querySelectorAll('.content__subtitle > span'), DOM.ctrlBack],
+                targets: [contentInner.querySelectorAll('.content__title > span'), contentInner.querySelectorAll('.content__subtitle span'), DOM.ctrlBack],
                 duration: 200,
                 delay: (t,i) => anime.random(0,600),
                 easing: 'easeInOutQuad',
@@ -212,7 +212,7 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
         
         const contentInner = DOM.contentInner[current];
         anime({
-            targets: [contentInner.querySelectorAll('.content__title > span'), contentInner.querySelectorAll('.content__subtitle > span'), DOM.ctrlBack],
+            targets: [contentInner.querySelectorAll('.content__title > span'), contentInner.querySelectorAll('.content__subtitle span'), DOM.ctrlBack],
             delay: (t,i) => anime.random(0,300),
             duration: 200,
             easing: 'easeInOutQuad',
