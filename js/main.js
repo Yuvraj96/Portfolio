@@ -177,11 +177,13 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
 
     let current;
     const open = pos => {
+        current = pos;
         this.isOpen = true;
+
         anime({
             targets: DOM.links.map(link => link.querySelectorAll('span')),
-            delay: (t,i) => anime.random(0,300),
             duration: 200,
+            delay: (t,i) => anime.random(0,300),
             easing: 'easeInOutQuad',
             opacity: 0,
             begin: () => DOM.links.forEach(link => {
@@ -189,9 +191,7 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
             })
         });
 
-        current = pos;
-        const currentBlob = blobs[current];
-        currentBlob.expand().then(() => {
+        blobs[current].expand().then(() => {
             DOM.content.style.pointerEvents = 'auto';
             const contentInner = DOM.contentInner[pos];
             contentInner.classList.add('content__inner--show');
@@ -203,7 +203,7 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
                 opacity: [0,1]
             });
         });
-        blobs.filter(el => el !== currentBlob).forEach(blob => blob.hide());
+        blobs.filter(el => el !== blobs[current]).forEach(blob => blob.hide());
     };
 
     const close = () => {
@@ -213,8 +213,8 @@ function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.len
         const contentInner = DOM.contentInner[current];
         anime({
             targets: [contentInner.querySelectorAll('.content__title > span'), contentInner.querySelectorAll('.content__subtitle span'), DOM.ctrlBack],
-            delay: (t,i) => anime.random(0,300),
             duration: 200,
+            delay: (t,i) => anime.random(0,300),
             easing: 'easeInOutQuad',
             opacity: 0,
             complete: () => {
